@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2d2d30">
+    <meta name="description" content="Initial HW designs complete electronics systems, from architecture and PCB design through firmware, integration, and bench validation. A focused path to working hardware.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Initial HW — Ideas become working hardware.">
+    <meta property="og:description" content="Complete electronics systems, designed from first brief to working hardware. Hardware, firmware, and embedded software, designed together.">
+    <meta property="og:site_name" content="Initial HW">
+    <title>Initial HW — Electronics Systems Engineering</title>
+    <link rel="icon" href="assets/ihw-favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"ProfessionalService","name":"Initial HW","description":"Electronics systems engineering: hardware, high-speed digital integration, firmware, embedded software, and board bring-up.","email":"contact@initialhw.com","founder":{"@type":"Person","name":"George Krystallis"},"sameAs":["https://cal.com/initialhw"]}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Initial HW, home"><img src="assets/ihw-mark.svg" width="200" height="42" alt=""></a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#services">Capabilities</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#approach">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="button button-small button-accent" href="https://cal.com/initialhw" target="_blank" rel="noopener noreferrer">Book a meeting <span aria-hidden="true">↗</span></a>
+          <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav" hidden><span></span><span></span></button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="#services">Capabilities <span aria-hidden="true">↗</span></a>
+        <a href="#expertise">Expertise <span aria-hidden="true">↗</span></a>
+        <a href="#approach">Process <span aria-hidden="true">↗</span></a>
+        <a href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero container" id="home" aria-labelledby="hero-heading">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> ELECTRONICS SYSTEMS ENGINEERING</p>
+          <h1 id="hero-heading">Ideas become<br>working<br><span class="text-accent">hardware.</span></h1>
+          <p class="hero-description">Initial HW designs complete electronics systems—from architecture and PCB through firmware, integration, and validation. A focused, project-based path from first brief to working hardware.</p>
+          <div class="hero-actions">
+            <a class="button button-accent" href="https://cal.com/initialhw" target="_blank" rel="noopener noreferrer">Book a meeting <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#contact-form">Send a brief <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-note">Your project. One engineering partner.</p>
+        </div>
+
+        <figure class="system-visual" aria-labelledby="system-caption">
+          <div class="visual-topline"><span><span class="tiny-cross" aria-hidden="true">+</span> THE BIG PICTURE</span><span>FIG. 001</span></div>
+          <svg class="board-scene" viewBox="0 0 640 490" fill="none" aria-hidden="true">
+            <defs>
+              <pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#b7aca0" opacity=".16"/></pattern>
+              <linearGradient id="board-fill" x1="0" y1="0" x2="380" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#42494a"/><stop offset="1" stop-color="#333c3e"/></linearGradient>
+              <linearGradient id="chip-fill" x1="138" y1="105" x2="232" y2="201" gradientUnits="userSpaceOnUse"><stop stop-color="#313739"/><stop offset="1" stop-color="#262d2f"/></linearGradient>
+              <radialGradient id="scene-glow"><stop stop-color="#5da9ff" stop-opacity=".12"/><stop offset="1" stop-color="#5da9ff" stop-opacity="0"/></radialGradient>
+              <filter id="board-shadow" x="-40%" y="-40%" width="180%" height="200%"><feGaussianBlur stdDeviation="13"/></filter>
+              <g id="chip-pins" stroke="#c2bbb2" stroke-width="4"><path d="M145 106V95m12 11V95m12 11V95m12 11V95m12 11V95m12 11V95m12 11V95m12 11V95M145 202v11m12-11v11m12-11v11m12-11v11m12-11v11m12-11v11m12-11v11m12-11v11M138 114h-11m11 12h-11m11 12h-11m11 12h-11m11 12h-11m11 12h-11m11 12h-11M236 114h11m-11 12h11m-11 12h11m-11 12h11m-11 12h11m-11 12h11m-11 12h11"/></g>
+              <g id="solder-pad"><rect width="9" height="6" rx="1" fill="#b7afa6"/></g>
+              <g id="small-component"><rect width="26" height="12" rx="2" fill="#2a3032" stroke="#8e8376"/><path d="M3 1v10m20-10v10" stroke="#c0b7ab" stroke-width="4"/></g>
+            </defs>
+            <rect width="640" height="490" fill="url(#dot-grid)"/>
+            <ellipse cx="328" cy="251" rx="288" ry="219" fill="url(#scene-glow)"/>
+            <path d="M76 348 315 473 593 328" stroke="#9f9384" stroke-dasharray="3 7" opacity=".3"/>
+            <path d="M66 324v24h24m480-6h24v-24" stroke="#baa794" opacity=".3"/>
+            <g transform="matrix(.88 .46 -.82 .43 285 139)" opacity=".5"><rect x="-4" y="-4" width="388" height="308" rx="13" fill="#0c191d" filter="url(#board-shadow)"/></g>
+            <g transform="matrix(.88 .46 -.82 .43 285 133)"><rect width="380" height="300" rx="10" fill="#303739" stroke="#7a7267"/><path d="M20 25h340v250H20z" stroke="#706b62" stroke-dasharray="4 8" opacity=".5"/></g>
+            <g transform="matrix(.88 .46 -.82 .43 285 111)"><rect width="380" height="300" rx="10" fill="#373d3f" stroke="#a49584" stroke-opacity=".55"/><path d="M20 25h340v250H20z" stroke="#ad947f" stroke-dasharray="3 6" opacity=".3"/></g>
+            <g class="main-board" transform="matrix(.88 .46 -.82 .43 285 86)">
+              <rect y="8" width="380" height="300" rx="10" fill="#2a3437" stroke="#ab8e76" stroke-opacity=".45"/>
+              <rect width="380" height="300" rx="10" fill="url(#board-fill)" stroke="#c8ac92" stroke-opacity=".7"/>
+              <rect x="9" y="9" width="362" height="282" rx="5" stroke="#c8ac92" stroke-opacity=".18"/>
+              <g fill="#2a3437" stroke="#c4b19b" stroke-width="2"><circle cx="20" cy="20" r="6"/><circle cx="360" cy="20" r="6"/><circle cx="20" cy="280" r="6"/><circle cx="360" cy="280" r="6"/></g>
+              <g stroke="#87baf4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M127 126H95L64 95H36V55h60M127 138H88L59 109H26v100h45l28-28h28M127 150H83l-25 25H30M127 162H99l-37 37v46h49l34-34M157 95V70l-24-24H61M169 95V63l-26-26H88M181 95V56l23-23h95M193 95V65l25-25h93M247 150h38l29-29h35V72h-49M247 162h47l28-28h35v86h-54l-27-27h-29M217 213v29l21 21h95M205 213v40l20 20h103M169 213v20l-19 19H84"/>
+              </g>
+              <g stroke="#9faeaf" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M145 95V82l-26-26H36M205 95V77l30-30h94M217 95V83l34-34h94M247 114h18l25-25h42M247 126h28l23-23h34M247 174h22l27 27h41v44M247 186h15l26 26h40v38M181 213v45l-15 15h-46M193 213v54l-16 16H70M127 174H99l-14 14H43M127 186H111l-27 27H42"/>
+              </g>
+              <g fill="#a7d0ff"><circle cx="36" cy="55" r="3"/><circle cx="30" cy="175" r="3"/><circle cx="61" cy="46" r="3"/><circle cx="349" cy="72" r="3"/><circle cx="333" cy="263" r="3"/><circle cx="84" cy="252" r="3"/></g>
+              <g opacity=".7"><use href="#small-component" x="44" y="67"/><use href="#small-component" x="77" y="67"/><use href="#small-component" x="283" y="60"/><use href="#small-component" x="289" y="232"/><use href="#small-component" x="63" y="226"/><use href="#small-component" x="97" y="226"/></g>
+              <g><rect x="36" y="130" width="35" height="25" rx="3" fill="#313a3d" stroke="#a1907d"/><path d="M43 136h20m-20 5h20m-20 5h20" stroke="#b1a18d"/><rect x="291" y="153" width="38" height="24" rx="3" fill="#313a3d" stroke="#a1907d"/><path d="M299 161h23m-23 8h23" stroke="#b1a18d"/></g>
+              <g opacity=".8"><use href="#solder-pad" x="44" y="269"/><use href="#solder-pad" x="59" y="269"/><use href="#solder-pad" x="74" y="269"/><use href="#solder-pad" x="89" y="269"/><use href="#solder-pad" x="104" y="269"/><use href="#solder-pad" x="300" y="23"/><use href="#solder-pad" x="315" y="23"/><use href="#solder-pad" x="330" y="23"/></g>
+              <use href="#chip-pins"/>
+              <rect x="138" y="111" width="98" height="96" rx="4" fill="#242b2d"/>
+              <rect x="138" y="105" width="98" height="96" rx="4" fill="url(#chip-fill)" stroke="#c3aa92"/>
+              <rect x="145" y="112" width="84" height="82" rx="2" stroke="#a29483" stroke-opacity=".24"/>
+              <circle cx="150" cy="117" r="2" fill="#dcc4ab"/>
+              <text x="187" y="157" fill="#f0e5d7" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="-2">IHW</text>
+              <text x="187" y="175" fill="#beaa92" text-anchor="middle" font-family="monospace" font-size="7" letter-spacing="2">SYSTEM CORE</text>
+              <text class="board-label" x="254" y="285" fill="#afd2fa" text-anchor="middle" font-family="monospace" font-size="7" letter-spacing=".6">INITIAL HW</text>
+            </g>
+            <g stroke="#b7a18a" stroke-width="1" opacity=".55"><path d="M303 87V43h88"/><circle cx="303" cy="87" r="3" fill="#ddb38f"/><path d="M113 233H59v-51H21"/><circle cx="113" cy="233" r="3" fill="#ddb38f"/><path d="M484 283h103v59"/><circle cx="484" cy="283" r="3" fill="#ddb38f"/></g>
+            <g fill="#c1b2a0" font-family="monospace" font-size="10" letter-spacing="1.4"><text x="320" y="34">HARDWARE + FIRMWARE</text><text x="20" y="171">DESIGNED</text><text x="20" y="185">TOGETHER</text><text x="497" y="361">EVERY LAYER.</text><text x="497" y="376">ONE SYSTEM.</text></g>
+            <g fill="#5da9ff"><path d="M37 47v10m-5-5h10M584 72v10m-5-5h10M40 401v10m-5-5h10" opacity=".6"/></g>
+          </svg>
+          <div class="visual-bottomline">
+            <figcaption id="system-caption"><span class="status-dot" aria-hidden="true"></span>The complete system</figcaption>
+          </div>
+        </figure>
+
+        <div class="hero-footer">
+          <p>HARDWARE <span aria-hidden="true">/</span> FIRMWARE <span aria-hidden="true">/</span> EMBEDDED SOFTWARE</p>
+          <a href="#services" aria-label="Scroll to services">SCROLL TO EXPLORE <span class="scroll-arrow" aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="section services-section" id="services" aria-labelledby="services-heading">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="eyebrow section-index">01 / WHAT GOES INTO A SYSTEM</p><h2 id="services-heading">Electronics, designed<br><span class="text-muted">as a system.</span></h2></div>
+            <p class="section-description">From architecture and circuit design through firmware and validation, these disciplines come together in a working product.</p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card" id="service-hardware">
+              <div class="card-top"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="10" y="10" width="20" height="20" rx="2"/><rect x="16" y="16" width="8" height="8"/><path d="M15 10V5m10 5V5M15 30v5m10-5v5M10 15H5m5 10H5m25-10h5m-5 10h5"/></svg><span>01</span></div>
+              <h3>Hardware &amp; PCB design</h3>
+              <p>Thoughtful circuits and boards built around your requirements, with the entire system in view.</p>
+              <ul><li>Requirements &amp; system architecture</li><li>Schematics &amp; component selection</li><li>PCB layout &amp; manufacturing files</li></ul>
+            </article>
+            <article class="service-card" id="service-firmware">
+              <div class="card-top"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="m13 11-9 9 9 9m14-18 9 9-9 9M23 7l-6 26"/></svg><span>02</span></div>
+              <h3>Firmware &amp; embedded software</h3>
+              <p>The software that makes your hardware useful. Developed alongside the electronics it runs on.</p>
+              <ul><li>Embedded application development</li><li>Peripheral drivers &amp; sensor integration</li><li>Linux kernel &amp; board support</li></ul>
+            </article>
+            <article class="service-card" id="service-digital">
+              <div class="card-top"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 24h8V12h8v16h8V16h8M4 34h32M9 5v3m11-3v3m11-3v3"/></svg><span>03</span></div>
+              <h3>High-speed digital systems</h3>
+              <p>Board-level design for memory and digital interfaces, with careful attention to routing, timing, and system integration.</p>
+              <ul><li>High-speed PCB design</li><li>DDR memory integration</li><li>Ethernet &amp; digital interfaces</li></ul>
+            </article>
+            <article class="service-card" id="service-bringup">
+              <div class="card-top"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="5" y="8" width="30" height="23" rx="3"/><path d="M9 20h5l3-7 5 13 3-6h6M15 35h10m-5-4v4"/></svg><span>04</span></div>
+              <h3>Bring-up &amp; validation</h3>
+              <p>Hands-on debugging to move a prototype from first power-on to a tested, dependable system.</p>
+              <ul><li>Board bring-up &amp; bench testing</li><li>Hardware and software debugging</li><li>Design reviews &amp; documentation</li></ul>
+            </article>
+            <article class="service-card" id="service-power">
+              <div class="card-top"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="m23 4-13 18h10l-3 14 13-18H20l3-14Z"/></svg><span>05</span></div>
+              <h3>Power &amp; analog electronics</h3>
+              <p>Power supplies and analog circuits designed around the signals, loads, and practical constraints of your product.</p>
+              <ul><li>DC power conversion &amp; regulation</li><li>Analog signal conditioning</li><li>Audio amplifier design</li></ul>
+            </article>
+            <article class="service-card" id="service-connectivity">
+              <div class="card-top"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M6 14a20 20 0 0 1 28 0M11 20a13 13 0 0 1 18 0M16 26a6 6 0 0 1 8 0"/><circle cx="20" cy="32" r="2"/></svg><span>06</span></div>
+              <h3>Connectivity &amp; sensing</h3>
+              <p>Connect your product to its sensors, surrounding devices, and networks—with hardware and software working together.</p>
+              <ul><li>Analog &amp; digital sensor integration</li><li>Wi-Fi &amp; RF module integration</li><li>Wired communications &amp; drivers</li></ul>
+            </article>
+          </div>
+          <div class="services-next-step"><p>Have a system in mind? Start with the big picture.</p><a class="button button-outline" href="#contact-form">Send a project brief <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </section>
+
+      <section class="section expertise-section" id="expertise" aria-labelledby="expertise-heading">
+        <div class="container expertise-layout">
+          <div class="expertise-intro"><p class="eyebrow section-index">02 / TECHNICAL EXPERIENCE</p><h2 id="expertise-heading">Different disciplines.<br><span class="text-muted">Connected thinking.</span></h2><p>Experience across power, digital, and embedded systems. The details are considered together, from the circuit to the software running on it.</p><a class="text-link" href="#approach">See the design process <span aria-hidden="true">↓</span></a></div>
+          <div class="expertise-list">
+            <details class="expertise-item" open><summary><span class="expertise-number">01</span><span>Power &amp; analog electronics</span><span class="details-icon" aria-hidden="true"></span></summary><div class="expertise-content"><p>DC power electronics, power conversion and regulation, and analog signal paths—including audio amplifier design. Considering power, noise, and the surrounding system together.</p><div class="tags"><span>DC power</span><span>Power regulation</span><span>Audio amplifiers</span><span>Mixed-signal</span></div></div></details>
+            <details class="expertise-item"><summary><span class="expertise-number">02</span><span>High-speed digital</span><span class="details-icon" aria-hidden="true"></span></summary><div class="expertise-content"><p>High-speed digital interfaces, DDR memory integration, and Ethernet. Previous work includes FPGA-based hardware, with a focus on board design and system integration.</p><div class="tags"><span>FPGA</span><span>DDR memory</span><span>Ethernet</span><span>High-speed interfaces</span></div></div></details>
+            <details class="expertise-item"><summary><span class="expertise-number">03</span><span>Connectivity &amp; sensing</span><span class="details-icon" aria-hidden="true"></span></summary><div class="expertise-content"><p>Analog and digital sensor interfaces, signal conditioning, and Wi-Fi and RF module integration. Wired and wireless connectivity with the peripheral drivers needed to make the complete system communicate.</p><div class="tags"><span>Analog sensors</span><span>Signal conditioning</span><span>Wi-Fi</span><span>RF modules</span><span>SPI / I²C</span><span>UART</span><span>FDCAN / CAN FD</span><span>Ethernet</span></div></div></details>
+            <details class="expertise-item"><summary><span class="expertise-number">04</span><span>Embedded software &amp; Linux</span><span class="details-icon" aria-hidden="true"></span></summary><div class="expertise-content"><p>Embedded programming, peripheral drivers, Linux kernel integration, and board bring-up. Making the path from boot to application work with the actual hardware.</p><div class="tags"><span>Embedded firmware</span><span>Peripheral drivers</span><span>Linux kernel</span><span>Board bring-up</span></div></div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section approach-section" id="approach" aria-labelledby="approach-heading">
+        <div class="container">
+          <div class="section-heading"><div><p class="eyebrow section-index">03 / THE DESIGN PROCESS</p><h2 id="approach-heading">From requirements<br><span class="text-muted">to working hardware.</span></h2></div><p class="section-description">A clear engineering path connects the initial requirements, the design decisions, and what happens on the bench.</p></div>
+          <ol class="process-grid">
+            <li><div class="process-top"><span>01</span><div aria-hidden="true"></div></div><h3>Define the right system.</h3><p>Requirements, operating constraints, and system architecture establish what the electronics need to do and how the design will be delivered.</p><span class="process-output">REQUIREMENTS → ARCHITECTURE</span></li>
+            <li><div class="process-top"><span>02</span><div aria-hidden="true"></div></div><h3>Design. Build. Integrate.</h3><p>Circuits, layout, firmware, and software develop together. Regular updates keep decisions visible and your project moving.</p><span class="process-output">DESIGN → A WORKING PROTOTYPE</span></li>
+            <li><div class="process-top"><span>03</span><div aria-hidden="true"></div></div><h3>Test it. Hand it over.</h3><p>Bring-up and bench validation check the design against the agreed requirements. You receive the files and documentation to keep going.</p><span class="process-output">VALIDATION → A CONFIDENT NEXT STEP</span></li>
+          </ol>
+          <div class="about-panel"><div class="about-identity"><img class="practice-mark" src="assets/ihw-mark.svg" width="176" height="37" alt="Initial HW"><p>Electronics Systems Engineering<br>Hardware. Firmware. Embedded software.</p></div><p class="about-description">A defined project scope moves work from requirements to validated hardware. Build a new system or add focused prototype capacity without expanding an in-house team.</p><a class="about-link" href="#contact-form">Start a project <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+        <div class="container contact-layout">
+          <div class="contact-intro"><p class="eyebrow section-index">04 / START A PROJECT</p><h2 id="contact-heading">Let’s make<br><span class="text-accent">it work.</span></h2><p>Have an electronics system in mind? Share a short brief, or book a meeting to define the requirements and a path to a working prototype.</p><a class="contact-email" href="mailto:contact@initialhw.com">contact@initialhw.com <span aria-hidden="true">↗</span></a><p class="contact-person">Project enquiries</p><div class="meeting-note"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-13 5h3"/></svg><div><p>Prefer to start with a meeting?</p><a href="https://cal.com/initialhw" target="_blank" rel="noopener noreferrer">Book a project meeting <span aria-hidden="true">↗</span></a></div></div></div>
+          <form class="contact-form" id="contact-form" action="mailto:contact@initialhw.com" method="post" enctype="text/plain">
+            <div class="form-row"><div class="form-field"><label for="name">Your name <span class="field-qualifier">(optional)</span></label><input id="name" name="Name" autocomplete="name" placeholder="Alex Smith" maxlength="100"></div><div class="form-field"><label for="email">Email address <span class="field-qualifier">(required)</span></label><input id="email" name="Email" type="email" inputmode="email" autocomplete="email" placeholder="alex@company.com" maxlength="254" required></div></div>
+            <div class="form-field"><label for="message">About your project <span class="field-qualifier">(required)</span></label><textarea id="message" name="Message" rows="4" placeholder="Describe the system or design work you have in mind." maxlength="2500" aria-describedby="message-hint" required></textarea><span class="field-hint" id="message-hint">A brief outline is enough to get started.</span></div>
+            <button class="button button-accent form-submit" type="submit">Prepare an email <span aria-hidden="true">↗</span></button>
+            <p class="form-note">Opens a draft in your email app. You review and send it.</p>
+            <div class="form-result" id="form-result" hidden><p id="form-status" role="status" aria-live="polite"></p><div class="form-result-actions"><a id="email-draft-link" class="text-link" href="mailto:contact@initialhw.com">Open draft again <span aria-hidden="true">↗</span></a><button class="text-link" id="copy-message" type="button">Copy message <span aria-hidden="true">⧉</span></button></div><textarea class="copy-fallback" id="copy-fallback" aria-label="Email details to copy" readonly hidden></textarea></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container"><a class="brand footer-brand" href="#home" aria-label="Initial HW, back to top"><img src="assets/ihw-mark.svg" width="142" height="30" alt=""></a><p>© <span id="copyright-year">2026</span> Initial HW. Designed to work.</p><a class="back-to-top" href="#home">Back to top <span aria-hidden="true">↑</span></a></footer>
+    <nav class="mobile-contact-bar" aria-label="Quick project contact" hidden><a class="button button-accent" href="https://cal.com/initialhw" target="_blank" rel="noopener noreferrer">Book a meeting <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#contact-form">Send a brief <span aria-hidden="true">↓</span></a></nav>
+  </body>
+</html>
