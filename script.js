@@ -104,42 +104,126 @@
   }
   mobileBreakpoint.addEventListener("change", updateMobileContactBar);
 
-  document.querySelectorAll(".project-image-swap").forEach((figure) => {
-    const imageButton = figure.querySelector(".project-media-switch");
-    const projectName = imageButton.dataset.projectName;
-    const photo = figure.querySelector(".project-image-primary");
-    const render = figure.querySelector(".project-image-render");
-    const hoverTarget = figure.closest(".project-card");
-    let selectedView = null;
-    let hovering = false;
+  document.querySelectorAll(".project-carousel").forEach((carousel) => {
+    const viewport = carousel.querySelector(".carousel-viewport");
+    const slides = [...carousel.querySelectorAll(".carousel-slide")];
+    const controls = carousel.querySelector(".carousel-controls");
+    const position = carousel.querySelector("[data-carousel-position]");
+    const feedback = carousel.querySelector(".carousel-feedback");
+    let current = 0;
+    let requested = 0;
+    let requestId = 0;
+    let swipeStart = null;
 
-    function updateImage() {
-      const showRender = selectedView === null ? hovering : selectedView;
-      figure.classList.toggle("is-render", showRender);
-      figure.classList.toggle("is-photo", selectedView === false);
-      photo.setAttribute("aria-hidden", String(showRender));
-      render.setAttribute("aria-hidden", String(!showRender));
-      imageButton.setAttribute("aria-label", `Show ${projectName} ${showRender ? "assembled prototype" : "design render"}`);
-      imageButton.setAttribute("aria-pressed", String(showRender));
+    function frameSlide(slide) {
+      const frame = slide.querySelector(".carousel-image-frame");
+      const image = frame.querySelector("img");
+      const width = Number(image.getAttribute("width"));
+      const height = Number(image.getAttribute("height"));
+      const crop = (slide.dataset.crop || "0 0 1 1").split(" ").map(Number);
+      const rotation = Number(slide.dataset.rotation || 0);
+      const sideways = Math.abs(rotation) % 180 === 90;
+      const cropWidth = width * crop[2];
+      const cropHeight = height * crop[3];
+      const frameWidth = sideways ? cropHeight : cropWidth;
+      const frameHeight = sideways ? cropWidth : cropHeight;
+      const scale = Math.min((viewport.clientWidth - 24) / frameWidth, (viewport.clientHeight - 24) / frameHeight);
+      if (scale <= 0) return;
+
+      // Fit the chosen source region with one uniform scale, then rotate it.
+      // This preserves geometry and keeps screenshot edges out of the frame.
+      const angle = rotation * Math.PI / 180;
+      frame.style.width = `${frameWidth * scale}px`;
+      frame.style.height = `${frameHeight * scale}px`;
+
+      function positionImage(target, scale, containerWidth, containerHeight) {
+        const offsetX = (crop[0] + crop[2] / 2 - .5) * width * scale;
+        const offsetY = (crop[1] + crop[3] / 2 - .5) * height * scale;
+        target.style.width = `${width * scale}px`;
+        target.style.height = `${height * scale}px`;
+        target.style.left = `${containerWidth / 2 - Math.cos(angle) * offsetX + Math.sin(angle) * offsetY}px`;
+        target.style.top = `${containerHeight / 2 - Math.sin(angle) * offsetX - Math.cos(angle) * offsetY}px`;
+        target.style.setProperty("--image-rotation", `${rotation}deg`);
+      }
+
+      positionImage(image, scale, frameWidth * scale, frameHeight * scale);
+      slide.classList.add("is-framed");
     }
 
-    imageButton.addEventListener("click", () => {
-      const currentView = selectedView === null ? hovering : selectedView;
-      selectedView = !currentView;
-      updateImage();
+    function loadSlide(slide) {
+      const image = slide.querySelector(".carousel-image-frame img");
+      if (image.complete && image.naturalWidth) return Promise.resolve();
+      return new Promise((resolve, reject) => {
+        function cleanup() {
+          image.removeEventListener("load", onLoad);
+          image.removeEventListener("error", onError);
+        }
+        function onLoad() { cleanup(); resolve(); }
+        function onError() { cleanup(); reject(new Error("Image unavailable")); }
+        image.addEventListener("load", onLoad);
+        image.addEventListener("error", onError);
+        image.loading = "eager";
+        image.src = image.dataset.src || image.getAttribute("src");
+      });
+    }
+
+    async function showSlide(index) {
+      requested = (index + slides.length) % slides.length;
+      const target = requested;
+      const token = ++requestId;
+      feedback.hidden = true;
+      viewport.setAttribute("aria-busy", "true");
+      try {
+        await loadSlide(slides[target]);
+        if (token !== requestId) return;
+        slides.forEach((slide, i) => { slide.hidden = i !== target; });
+        current = target;
+        frameSlide(slides[current]);
+        position.textContent = String(current + 1);
+      } catch {
+        if (token !== requestId) return;
+        requested = current;
+        feedback.textContent = "This image could not load. Try another image.";
+        feedback.hidden = false;
+      } finally {
+        if (token === requestId) viewport.removeAttribute("aria-busy");
+      }
+    }
+
+    viewport.tabIndex = 0;
+    viewport.setAttribute("aria-label", "Project images; use left and right arrow keys to browse");
+    controls.hidden = false;
+    carousel.querySelector(".carousel-count").hidden = false;
+    controls.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => showSlide(requested + Number(button.dataset.direction)));
     });
-    hoverTarget.addEventListener("pointerenter", (event) => {
-      if (event.pointerType !== "mouse") return;
-      hovering = true;
-      selectedView = null;
-      updateImage();
+    carousel.addEventListener("keydown", (event) => {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      const destinations = { ArrowLeft: requested - 1, ArrowRight: requested + 1, Home: 0, End: slides.length - 1 };
+      if (!(event.key in destinations)) return;
+      event.preventDefault();
+      showSlide(destinations[event.key]);
     });
-    hoverTarget.addEventListener("pointerleave", (event) => {
-      if (event.pointerType !== "mouse") return;
-      hovering = false;
-      selectedView = null;
-      updateImage();
+    viewport.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "mouse" || !event.isPrimary || event.target.closest(".carousel-controls")) return;
+      swipeStart = { x: event.clientX, y: event.clientY, id: event.pointerId };
+      viewport.setPointerCapture(event.pointerId);
     });
+    viewport.addEventListener("pointerup", (event) => {
+      if (!swipeStart || event.pointerId !== swipeStart.id) return;
+      const dx = event.clientX - swipeStart.x;
+      const dy = event.clientY - swipeStart.y;
+      swipeStart = null;
+      if (Math.abs(dx) >= 40 && Math.abs(dx) > Math.abs(dy) * 1.25) showSlide(requested + (dx < 0 ? 1 : -1));
+    });
+    viewport.addEventListener("pointercancel", () => { swipeStart = null; });
+    frameSlide(slides[current]);
+    if ("ResizeObserver" in window) {
+      const resizeObserver = new ResizeObserver(() => frameSlide(slides[current]));
+      resizeObserver.observe(viewport);
+    } else {
+      window.addEventListener("resize", () => frameSlide(slides[current]));
+    }
   });
 
   const form = document.getElementById("contact-form");
