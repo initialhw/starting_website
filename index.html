@@ -11,8 +11,8 @@
     <meta property="og:site_name" content="Initial HW">
     <title>Initial HW — Electronics Systems Engineering</title>
     <link rel="icon" href="assets/ihw-favicon.svg?v=20261004c" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=20261004f">
-    <script src="script.js?v=20261004d" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261004i">
+    <script src="script.js?v=20261004h" defer></script>
     <script type="application/ld+json">
       {"@context":"https://schema.org","@type":"ProfessionalService","name":"Initial HW","description":"Electronics systems engineering: architecture, board design, power, communications, firmware, custom enclosures, prototype fabrication coordination, and bench validation.","email":"contact@initialhw.com","founder":{"@type":"Person","name":"George Krystallis","jobTitle":"Electronics and systems engineer","sameAs":["https://www.linkedin.com/in/gkrystallis"]},"sameAs":["https://cal.com/initialhw"]}
     </script>
@@ -57,22 +57,27 @@
           <p class="hero-note">Your project. One engineering partner.</p>
         </div>
 
-        <aside class="engineer-panel" id="engineer" aria-labelledby="engineer-heading">
-          <div class="engineer-identity">
-            <p class="eyebrow">YOUR ENGINEERING PARTNER</p>
-            <h2 id="engineer-heading">George Krystallis</h2>
-            <p class="engineer-role">Electronics &amp; systems engineer</p>
-          </div>
-          <div class="engineer-bio">
-            <p>My work spans rocketry avionics, connected boards, and power electronics. I take projects from circuit design through firmware and bench testing.</p>
-          </div>
-          <a class="text-link engineer-profile" href="https://www.linkedin.com/in/gkrystallis" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-          <div class="engineer-partner">
-            <p class="partner-label">Project partner</p>
-            <a class="text-link partner-link" href="https://kostasembedded.com/" target="_blank" rel="noopener noreferrer">Kostas Patsatzakis <span aria-hidden="true">↗</span></a>
-            <p class="partner-role">Hardware &amp; PCB engineering</p>
-          </div>
-        </aside>
+        <div class="engineer-panels">
+          <aside class="engineer-panel" id="engineer" aria-labelledby="engineer-heading">
+            <div class="engineer-identity">
+              <p class="eyebrow">YOUR ENGINEERING PARTNER</p>
+              <h2 id="engineer-heading">George Krystallis</h2>
+              <p class="engineer-role">Electronics &amp; Systems Engineer</p>
+            </div>
+            <div class="engineer-bio">
+              <p>My work spans rocketry avionics, connected boards, and power electronics. I take projects from circuit design through firmware and bench testing.</p>
+            </div>
+            <a class="text-link engineer-profile" href="https://www.linkedin.com/in/gkrystallis" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          </aside>
+          <aside class="engineer-panel partner-panel" aria-labelledby="partner-heading">
+            <div class="engineer-identity">
+              <p class="partner-label">Partnered with</p>
+              <h2 id="partner-heading">Kostas Patsatzakis</h2>
+              <p class="engineer-role">Hardware &amp; PCB engineering</p>
+            </div>
+            <a class="text-link engineer-profile" href="https://kostasembedded.com/" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a>
+          </aside>
+        </div>
 
         <div class="hero-footer">
           <p>HARDWARE <span aria-hidden="true">/</span> EMBEDDED SOFTWARE <span aria-hidden="true">/</span> ENCLOSURES</p>
@@ -112,6 +117,32 @@
               </details>
             </article>
 
+            <article class="project-card" aria-labelledby="h7-flight-computer-heading">
+              <div class="project-summary">
+                <p class="eyebrow">FIRMWARE / FLIGHT COMPUTING</p>
+                <h3 id="h7-flight-computer-heading">STM32H7 flight computer</h3>
+                <p>Flight firmware and a telemetry UI for a dual-core STM32H7 platform.</p>
+                <p class="project-highlight">Controlled a successful rocket flight to <strong>3 km apogee</strong>, managed airbrakes and recovery deployment, and <strong>guided a parachute payload</strong> to a predetermined target.</p>
+              </div>
+              <figure class="project-figure">
+                <div class="project-media"><img class="project-image-focused" src="assets/PXL_20240905_170712524-1.jpg" width="4080" height="3072" loading="lazy" decoding="async" alt="Assembled STM32H7 flight-computer PCB with a GNSS antenna and terminal connectors."></div>
+                <figcaption>Flight control &amp; telemetry</figcaption>
+              </figure>
+              <details class="project-details">
+                <summary><span>Project details</span><span class="details-icon" aria-hidden="true"></span></summary>
+                <div class="project-details-content">
+                  <p>Controlled recovery deployment and variable-apogee airbrakes, and guided a parachute payload to a predetermined target.</p>
+                  <dl class="project-specs">
+                    <div><dt>Compute</dt><dd>Dual-core STM32H7</dd></div>
+                    <div><dt>Navigation</dt><dd>GNSS</dd></div>
+                    <div><dt>Communications</dt><dd>CAN bus · LoRa integration</dd></div>
+                    <div><dt>Outputs</dt><dd>Pyro channels</dd></div>
+                  </dl>
+                  <p class="project-role"><strong>Contribution:</strong> firmware, telemetry UI, assembly, bench testing, and validation.</p>
+                </div>
+              </details>
+            </article>
+
             <article class="project-card project-card-swap" aria-labelledby="aurora-heading">
               <div class="project-summary">
                 <p class="eyebrow">BOARD DESIGN / SENSING &amp; TELEMETRY</p>
@@ -119,7 +150,7 @@
                 <p>A 50 × 50 mm telemetry board with integrated sensors, radio, and local storage.</p>
               </div>
               <figure class="project-figure project-image-swap">
-                <button class="project-media project-media-switch" id="aurora-views" type="button" aria-label="Show Aurora design render" aria-pressed="false">
+                <button class="project-media project-media-switch" id="aurora-views" type="button" data-project-name="Aurora" aria-label="Show Aurora design render" aria-pressed="false">
                   <img class="project-image-primary" src="assets/AURORAV1.jpg" width="3000" height="2768" loading="lazy" decoding="async" alt="Assembled green Aurora V1 telemetry PCB with sensors, an STM32 microcontroller, and USB-C connector.">
                   <img class="project-image-render" src="assets/aurora-design.png" width="1176" height="872" loading="lazy" decoding="async" alt="Angled KiCad render of the Aurora V1 board with some component models unavailable." aria-hidden="true">
                 </button>
@@ -139,14 +170,17 @@
                 </div>
               </details>
             </article>
-            <article class="project-card" aria-labelledby="power-test-heading">
+            <article class="project-card project-card-swap" aria-labelledby="power-test-heading">
               <div class="project-summary">
                 <p class="eyebrow">BOARD DESIGN / POWER SYSTEMS</p>
                 <h3 id="power-test-heading">Power-path test board</h3>
                 <p>A test board for switching between USB-C and battery power.</p>
               </div>
-              <figure class="project-figure">
-                <div class="project-media"><img src="assets/Screenshot%20from%202026-10-04%2021-05-34.png" width="891" height="780" loading="lazy" decoding="async" alt="KiCad render of a power-path test PCB with USB-C connectors, battery inputs, and power switching circuitry."></div>
+              <figure class="project-figure project-image-swap">
+                <button class="project-media project-media-switch" id="power-test-views" type="button" data-project-name="power-path test board" aria-label="Show power-path test board design render" aria-pressed="false">
+                  <img class="project-image-primary" src="assets/PXL_20240905_171026081-1.jpg" width="4080" height="3072" loading="lazy" decoding="async" alt="Assembled USB-C and battery power-path test PCB with capacitors and switching circuitry.">
+                  <img class="project-image-render" src="assets/Screenshot%20from%202026-10-04%2021-05-34.png" width="891" height="780" loading="lazy" decoding="async" alt="KiCad render of a power-path test PCB with USB-C connectors, battery inputs, and power switching circuitry." aria-hidden="true">
+                </button>
                 <figcaption>USB-C / battery power switching</figcaption>
               </figure>
               <details class="project-details">

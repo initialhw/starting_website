@@ -106,6 +106,7 @@
 
   document.querySelectorAll(".project-image-swap").forEach((figure) => {
     const imageButton = figure.querySelector(".project-media-switch");
+    const projectName = imageButton.dataset.projectName;
     const photo = figure.querySelector(".project-image-primary");
     const render = figure.querySelector(".project-image-render");
     const hoverTarget = figure.closest(".project-card");
@@ -118,7 +119,7 @@
       figure.classList.toggle("is-photo", selectedView === false);
       photo.setAttribute("aria-hidden", String(showRender));
       render.setAttribute("aria-hidden", String(!showRender));
-      imageButton.setAttribute("aria-label", showRender ? "Show Aurora assembled prototype" : "Show Aurora design render");
+      imageButton.setAttribute("aria-label", `Show ${projectName} ${showRender ? "assembled prototype" : "design render"}`);
       imageButton.setAttribute("aria-pressed", String(showRender));
     }
 
