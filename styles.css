@@ -161,7 +161,10 @@ h2 { font-size: clamp(35px, 3.7vw, 50px); line-height: 1.16; letter-spacing: -1.
 .engineer-bio { margin-top: 24px; }
 .engineer-bio p { color: #d0c7bd; font-size: 14px; line-height: 1.9; }
 .engineer-bio p + p { margin-top: 14px; }
-.engineer-bio .engineer-note { color: var(--muted); font-size: 12px; }
+.engineer-partner { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.partner-label { color: var(--muted); font-size: 12px; line-height: 1.6; }
+.partner-link { min-height: 44px; color: var(--accent); font-size: 15px; }
+.partner-role { color: var(--muted); font-size: 13px; line-height: 1.6; }
 
 .contact-section { padding-block: 105px; background: radial-gradient(ellipse at 0% 40%, #5b4c4040, transparent 55%), var(--bg); }
 .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 112px; }
@@ -306,7 +309,6 @@ h2 { font-size: clamp(35px, 3.7vw, 50px); line-height: 1.16; letter-spacing: -1.
   .engineer-panel { margin: 0 0 32px; padding: 25px; }
   .engineer-identity h2 { margin-top: 16px; font-size: 29px; }
   .engineer-profile { min-height: 44px; font-size: 14px; }
-  .engineer-bio .engineer-note { font-size: 13px; }
   .contact-layout { grid-template-columns: 1fr; gap: 45px; }
   .contact-intro h2 { font-size: 67px; }
   .contact-intro > p:not(.eyebrow) { max-width: 540px; font-size: 15px; }
