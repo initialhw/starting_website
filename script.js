@@ -255,6 +255,10 @@
     window.location.href = draftUrl;
   });
 
+  // This form prepares a local email draft. Enable it only after its submit
+  // handler is attached, so it cannot post visitor details to the static site.
+  form.querySelector(".form-submit").disabled = false;
+
   copyButton.addEventListener("click", async () => {
     try {
       if (!navigator.clipboard || !window.isSecureContext) throw new Error("Clipboard is unavailable");

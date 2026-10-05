@@ -194,6 +194,7 @@ h2 { font-size: clamp(35px, 3.7vw, 50px); line-height: 1.16; letter-spacing: -1.
 .meeting-note a:hover { color: var(--accent); }
 .meeting-note a .icon { width: 16px; height: 16px; color: var(--accent); }
 .contact-form { padding-top: 3px; min-width: 0; }
+body:not(.js-enabled) .contact-form > :not(noscript) { display: none; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .form-field { display: flex; flex-direction: column; gap: 10px; margin-bottom: 23px; min-width: 0; }
 .form-field label { font-size: 11px; color: #ded6ca; }
