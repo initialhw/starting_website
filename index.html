@@ -253,48 +253,6 @@
               </details>
             </article>
 
-            <article class="project-card" aria-labelledby="aurora-heading">
-              <div class="project-summary">
-                <p class="eyebrow">BOARD DESIGN / SENSING &amp; TELEMETRY</p>
-                <h3 id="aurora-heading">Aurora V1 telemetry module</h3>
-                <p>A 50 × 50 mm telemetry board with integrated sensors, radio, and local storage.</p>
-              </div>
-              <figure class="project-figure project-carousel" role="group" aria-roledescription="carousel" aria-label="Aurora V1 telemetry module images">
-                <div class="project-media carousel-viewport">
-                  <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
-                    <div class="carousel-image-frame"><img src="assets/web/aurora-hardware-640.webp" srcset="assets/web/aurora-hardware-640.webp 640w, assets/web/aurora-hardware-768.webp 768w, assets/web/aurora-hardware-1280.webp 1280w" sizes="(max-width: 400px) min(calc(100vw - 66px), 277.46px), (max-width: 760px) min(calc(100vw - 74px), 277.46px), (max-width: 950px) min(calc((100vw - 132px) / 2), 299.14px), (max-width: 1240px) min(calc((100vw - 156px) / 2), 299.14px), min(calc((100vw - 188px) / 2), 582px, 299.14px)" width="1280" height="1181" loading="lazy" decoding="async" fetchpriority="low" alt="Assembled Aurora V1 telemetry board"></div>
-                  </div>
-                  <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3" hidden>
-                    <div class="carousel-image-frame"><img data-src="assets/web/aurora-powered-hardware-640.webp" data-srcset="assets/web/aurora-powered-hardware-640.webp 640w, assets/web/aurora-powered-hardware-768.webp 768w, assets/web/aurora-powered-hardware-1280.webp 1280w" sizes="(max-width: 400px) min(calc(100vw - 66px), 284.2px), (max-width: 760px) min(calc(100vw - 74px), 284.2px), (max-width: 950px) min(calc((100vw - 132px) / 2), 306.4px), (max-width: 1240px) min(calc((100vw - 156px) / 2), 306.4px), min(calc((100vw - 188px) / 2), 582px, 306.4px)" width="1280" height="1153" loading="lazy" decoding="async" fetchpriority="low" alt="Powered Aurora V1 board connected by USB, next to a one-euro coin for scale"></div>
-                  </div>
-                  <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3" hidden>
-                    <div class="carousel-image-frame"><img data-src="assets/web/aurora-design-render-640.webp" data-srcset="assets/web/aurora-design-render-640.webp 640w, assets/web/aurora-design-render-1176.webp 1176w" sizes="(max-width: 400px) min(calc(100vw - 66px), 345.25px), (max-width: 760px) min(calc(100vw - 74px), 345.25px), (max-width: 950px) min(calc((100vw - 132px) / 2), 372.22px), (max-width: 1240px) min(calc((100vw - 156px) / 2), 372.22px), min(calc((100vw - 188px) / 2), 582px, 372.22px)" width="1176" height="872" loading="lazy" decoding="async" fetchpriority="low" alt="Angled KiCad render of Aurora V1 with some component models unavailable"></div>
-                  </div>
-                  <div class="carousel-controls" hidden>
-                    <button class="carousel-arrow" type="button" data-direction="-1" aria-label="Previous Aurora V1 telemetry module image"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
-                    <button class="carousel-arrow" type="button" data-direction="1" aria-label="Next Aurora V1 telemetry module image"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-                  </div>
-                </div>
-                <figcaption>
-                  <span class="project-caption">Compact sensing &amp; telemetry</span>
-                  <span class="carousel-count" hidden role="status" aria-live="polite" aria-atomic="true"><span class="visually-hidden">Image </span><span data-carousel-position>1</span><span aria-hidden="true"> / </span><span class="visually-hidden"> of </span>3</span>
-                  <span class="carousel-feedback" role="status" hidden></span>
-                </figcaption>
-              </figure>
-              <details class="project-details">
-                <summary><span>Project details</span><span class="details-icon" aria-hidden="true"></span></summary>
-                <div class="project-details-content">
-                  <dl class="project-specs">
-                    <div><dt>Compute &amp; radio</dt><dd>STM32F446 · 433 MHz RF module</dd></div>
-                    <div><dt>Sensing</dt><dd>Motion, pressure, temperature, humidity, and magnetic field</dd></div>
-                    <div><dt>Storage</dt><dd>microSD and NAND flash for local telemetry logging</dd></div>
-                    <div><dt>Interfaces</dt><dd>USB-C · battery input · SWD debug</dd></div>
-                  </dl>
-                  <p class="project-role"><strong>Contribution:</strong> board design.</p>
-                  <p class="project-image-note">The KiCad preview omits some unavailable component models.</p>
-                </div>
-              </details>
-            </article>
             <article class="project-card" aria-labelledby="power-test-heading">
               <div class="project-summary">
                 <p class="eyebrow">BOARD DESIGN / POWER SYSTEMS</p>
@@ -334,6 +292,48 @@
                     <div><dt>Power paths</dt><dd>USB-C and battery switching, with access for bench testing</dd></div>
                   </dl>
                   <p class="project-role"><strong>Contribution:</strong> test-board design.</p>
+                </div>
+              </details>
+            </article>
+            <article class="project-card" aria-labelledby="aurora-heading">
+              <div class="project-summary">
+                <p class="eyebrow">BOARD DESIGN / SENSING &amp; TELEMETRY</p>
+                <h3 id="aurora-heading">Aurora V1 telemetry module</h3>
+                <p>A 50 × 50 mm telemetry board with integrated sensors, radio, and local storage.</p>
+              </div>
+              <figure class="project-figure project-carousel" role="group" aria-roledescription="carousel" aria-label="Aurora V1 telemetry module images">
+                <div class="project-media carousel-viewport">
+                  <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                    <div class="carousel-image-frame"><img src="assets/web/aurora-hardware-640.webp" srcset="assets/web/aurora-hardware-640.webp 640w, assets/web/aurora-hardware-768.webp 768w, assets/web/aurora-hardware-1280.webp 1280w" sizes="(max-width: 400px) min(calc(100vw - 66px), 277.46px), (max-width: 760px) min(calc(100vw - 74px), 277.46px), (max-width: 950px) min(calc((100vw - 132px) / 2), 299.14px), (max-width: 1240px) min(calc((100vw - 156px) / 2), 299.14px), min(calc((100vw - 188px) / 2), 582px, 299.14px)" width="1280" height="1181" loading="lazy" decoding="async" fetchpriority="low" alt="Assembled Aurora V1 telemetry board"></div>
+                  </div>
+                  <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3" hidden>
+                    <div class="carousel-image-frame"><img data-src="assets/web/aurora-powered-hardware-640.webp" data-srcset="assets/web/aurora-powered-hardware-640.webp 640w, assets/web/aurora-powered-hardware-768.webp 768w, assets/web/aurora-powered-hardware-1280.webp 1280w" sizes="(max-width: 400px) min(calc(100vw - 66px), 284.2px), (max-width: 760px) min(calc(100vw - 74px), 284.2px), (max-width: 950px) min(calc((100vw - 132px) / 2), 306.4px), (max-width: 1240px) min(calc((100vw - 156px) / 2), 306.4px), min(calc((100vw - 188px) / 2), 582px, 306.4px)" width="1280" height="1153" loading="lazy" decoding="async" fetchpriority="low" alt="Powered Aurora V1 board connected by USB, next to a one-euro coin for scale"></div>
+                  </div>
+                  <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3" hidden>
+                    <div class="carousel-image-frame"><img data-src="assets/web/aurora-design-render-640.webp" data-srcset="assets/web/aurora-design-render-640.webp 640w, assets/web/aurora-design-render-1176.webp 1176w" sizes="(max-width: 400px) min(calc(100vw - 66px), 345.25px), (max-width: 760px) min(calc(100vw - 74px), 345.25px), (max-width: 950px) min(calc((100vw - 132px) / 2), 372.22px), (max-width: 1240px) min(calc((100vw - 156px) / 2), 372.22px), min(calc((100vw - 188px) / 2), 582px, 372.22px)" width="1176" height="872" loading="lazy" decoding="async" fetchpriority="low" alt="Angled KiCad render of Aurora V1 with some component models unavailable"></div>
+                  </div>
+                  <div class="carousel-controls" hidden>
+                    <button class="carousel-arrow" type="button" data-direction="-1" aria-label="Previous Aurora V1 telemetry module image"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+                    <button class="carousel-arrow" type="button" data-direction="1" aria-label="Next Aurora V1 telemetry module image"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  </div>
+                </div>
+                <figcaption>
+                  <span class="project-caption">Compact sensing &amp; telemetry</span>
+                  <span class="carousel-count" hidden role="status" aria-live="polite" aria-atomic="true"><span class="visually-hidden">Image </span><span data-carousel-position>1</span><span aria-hidden="true"> / </span><span class="visually-hidden"> of </span>3</span>
+                  <span class="carousel-feedback" role="status" hidden></span>
+                </figcaption>
+              </figure>
+              <details class="project-details">
+                <summary><span>Project details</span><span class="details-icon" aria-hidden="true"></span></summary>
+                <div class="project-details-content">
+                  <dl class="project-specs">
+                    <div><dt>Compute &amp; radio</dt><dd>STM32F446 · 433 MHz RF module</dd></div>
+                    <div><dt>Sensing</dt><dd>Motion, pressure, temperature, humidity, and magnetic field</dd></div>
+                    <div><dt>Storage</dt><dd>microSD and NAND flash for local telemetry logging</dd></div>
+                    <div><dt>Interfaces</dt><dd>USB-C · battery input · SWD debug</dd></div>
+                  </dl>
+                  <p class="project-role"><strong>Contribution:</strong> board design.</p>
+                  <p class="project-image-note">The KiCad preview omits some unavailable component models.</p>
                 </div>
               </details>
             </article>
