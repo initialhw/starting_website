@@ -104,9 +104,6 @@ h2 { font-size: clamp(35px, 3.7vw, 50px); line-height: 1.16; letter-spacing: -1.
 .carousel-image-frame { position: absolute; z-index: 1; inset: 12px; overflow: hidden; }
 .carousel-image-frame img { width: 100%; height: 100%; object-fit: contain; user-select: none; pointer-events: none; }
 .carousel-slide.is-framed .carousel-image-frame { inset: auto; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-.carousel-slide.is-framed img { position: absolute; max-width: none; transform: translate(-50%, -50%) rotate(var(--image-rotation, 0deg)); }
-.carousel-slide:not(.is-framed)[data-rotation="-90"] img { position: absolute; left: 50%; top: 50%; width: calc(100cqh - 24px); height: calc(100cqw - 24px); max-width: none; transform: translate(-50%, -50%) rotate(-90deg); }
-.carousel-slide:not(.is-framed)[data-rotation="180"] img { transform: rotate(180deg); }
 .project-figure figcaption { padding: 8px 12px 8px 18px; border-top: 1px solid var(--line); min-height: 38px; display: flex; justify-content: space-between; align-items: center; gap: 8px 12px; flex-wrap: wrap; color: var(--muted); font: 11px/1.6 var(--mono); }
 .project-caption { flex: 1 1 130px; }
 .carousel-controls { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; pointer-events: none; }
@@ -163,6 +160,9 @@ h2 { font-size: clamp(35px, 3.7vw, 50px); line-height: 1.16; letter-spacing: -1.
 .process-top > div::after { content: ""; position: absolute; right: 0; top: -2px; width: 5px; height: 5px; background: var(--accent); }
 .process-grid h3 { font-size: 20px; letter-spacing: -.4px; }
 .process-grid p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-top: 14px; }
+.handover-note { display: grid; grid-template-columns: 230px 1fr; gap: 32px; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line); }
+.handover-note h3 { font-size: 18px; line-height: 1.5; letter-spacing: -.3px; }
+.handover-note p { color: var(--muted); font-size: 14px; line-height: 1.8; }
 .engineer-panels { min-width: 0; display: grid; gap: 18px; align-self: start; margin-bottom: 60px; }
 .engineer-panel { min-width: 0; padding: 36px; border: 1px solid #76644a; border-top: 3px solid var(--brand); border-radius: var(--radius); background: linear-gradient(145deg, #383632, #333230); }
 .engineer-identity .eyebrow { color: var(--accent); font-size: 10px; letter-spacing: 1.2px; }
@@ -312,6 +312,7 @@ h2 { font-size: clamp(35px, 3.7vw, 50px); line-height: 1.16; letter-spacing: -1.
   .process-top { margin-bottom: 20px; }
   .process-grid h3 { font-size: 21px; }
   .process-grid p { font-size: 14px; margin-top: 12px; max-width: 540px; }
+  .handover-note { grid-template-columns: 1fr; gap: 10px; margin-top: 28px; padding-top: 22px; }
   .engineer-panels { margin-bottom: 32px; }
   .engineer-panel { padding: 25px; }
   .engineer-identity h2 { margin-top: 16px; font-size: 29px; }

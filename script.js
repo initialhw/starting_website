@@ -120,38 +120,21 @@
       const image = frame.querySelector("img");
       const width = Number(image.getAttribute("width"));
       const height = Number(image.getAttribute("height"));
-      const crop = (slide.dataset.crop || "0 0 1 1").split(" ").map(Number);
-      const rotation = Number(slide.dataset.rotation || 0);
-      const sideways = Math.abs(rotation) % 180 === 90;
-      const cropWidth = width * crop[2];
-      const cropHeight = height * crop[3];
-      const frameWidth = sideways ? cropHeight : cropWidth;
-      const frameHeight = sideways ? cropWidth : cropHeight;
-      const scale = Math.min((viewport.clientWidth - 24) / frameWidth, (viewport.clientHeight - 24) / frameHeight);
+      const scale = Math.min((viewport.clientWidth - 24) / width, (viewport.clientHeight - 24) / height);
       if (scale <= 0) return;
 
-      // Fit the chosen source region with one uniform scale, then rotate it.
-      // This preserves geometry and keeps screenshot edges out of the frame.
-      const angle = rotation * Math.PI / 180;
-      frame.style.width = `${frameWidth * scale}px`;
-      frame.style.height = `${frameHeight * scale}px`;
-
-      function positionImage(target, scale, containerWidth, containerHeight) {
-        const offsetX = (crop[0] + crop[2] / 2 - .5) * width * scale;
-        const offsetY = (crop[1] + crop[3] / 2 - .5) * height * scale;
-        target.style.width = `${width * scale}px`;
-        target.style.height = `${height * scale}px`;
-        target.style.left = `${containerWidth / 2 - Math.cos(angle) * offsetX + Math.sin(angle) * offsetY}px`;
-        target.style.top = `${containerHeight / 2 - Math.sin(angle) * offsetX - Math.cos(angle) * offsetY}px`;
-        target.style.setProperty("--image-rotation", `${rotation}deg`);
-      }
-
-      positionImage(image, scale, frameWidth * scale, frameHeight * scale);
+      // Web copies already contain the selected crop and orientation.
+      // Fit uniformly and tell the browser the actual displayed width.
+      frame.style.width = `${width * scale}px`;
+      frame.style.height = `${height * scale}px`;
+      image.sizes = `${Math.ceil(width * scale)}px`;
       slide.classList.add("is-framed");
     }
 
     function loadSlide(slide) {
       const image = slide.querySelector(".carousel-image-frame img");
+      frameSlide(slide);
+      if (image.dataset.srcset) image.srcset = image.dataset.srcset;
       if (image.complete && image.naturalWidth) return Promise.resolve();
       return new Promise((resolve, reject) => {
         function cleanup() {
@@ -163,6 +146,7 @@
         image.addEventListener("load", onLoad);
         image.addEventListener("error", onError);
         image.loading = "eager";
+        image.fetchPriority = "auto";
         image.src = image.dataset.src || image.getAttribute("src");
       });
     }
