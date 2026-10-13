@@ -169,6 +169,11 @@ h2 { font-size: clamp(35px, 3.7vw, 50px); line-height: 1.16; letter-spacing: -1.
 .engineer-identity h2 { margin-top: 20px; font-size: clamp(30px, 3vw, 44px); line-height: 1.2; letter-spacing: -1px; }
 .engineer-role { margin-top: 12px; color: var(--muted); font-size: 14px; line-height: 1.6; }
 .engineer-profile { min-height: 44px; margin-top: 20px; color: var(--accent); }
+.social-links { display: flex; align-items: center; gap: 6px; margin: 20px 0 0 -11px; }
+.contact-person .social-links { margin: 0; }
+.social-link, .contact-person a.social-link { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; color: var(--accent); transition: color .2s ease, background-color .2s ease; }
+.social-link:hover, .contact-person a.social-link:hover { color: var(--text); background: rgba(255, 255, 255, .06); }
+.brand-icon { width: 20px; height: 20px; fill: currentColor; }
 .engineer-bio { margin-top: 24px; }
 .engineer-bio p { color: #d0c7bd; font-size: 14px; line-height: 1.9; }
 .engineer-bio p + p { margin-top: 14px; }
